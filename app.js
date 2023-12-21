@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import fileUpload from "express-fileupload";
 import dotenv from "dotenv";
 import errorMiddleware from "./middleware/error.js";
+import cors from 'cors';
 
 import path from "path";
 import { fileURLToPath } from "url";
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
+app.use(cors());
 
 //Route  import
 import product from "./routes/productRoute.js";
